@@ -1,0 +1,30 @@
+{
+  "name": "oauth2-course",
+  "version": "1.0.0",
+  "description": "Open Authorization",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node app.js",
+    "dev" : "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Loutfox/oauth2-course.git"
+  },
+  "keywords": [
+    "oauth2"
+  ],
+  "author": "LoutFox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Loutfox/oauth2-course/issues"
+  },
+  "homepage": "https://github.com/Loutfox/oauth2-course#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
