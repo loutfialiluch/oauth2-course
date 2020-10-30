@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -22,11 +24,15 @@
   },
   "homepage": "https://github.com/Loutfox/oauth2-course#readme",
   "dependencies": {
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mongoose": "^5.10.11",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "nodemon": "^2.0.6"
   }
 }

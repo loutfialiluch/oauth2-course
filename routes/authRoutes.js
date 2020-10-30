@@ -1,16 +1,27 @@
-const router = require('express').Router();
+const router = require("express").Router();
+const passport = require("passport");
+const passportSetup = require("../config/passportSetup");
+
+
+
+
+
+
 
 // auth logout
 router.get("/logout", (req, res) => {
   // handle logout with passport
-  res.send("Logging out ! ");
+  req.logout();
+  res.json({
+    isLoggedIn : false
+  })
 });
 
 // auth with google
-router.get("/google", (req, res) => {
-  // handle googla auth with passport
-  res.send("Loggin in with google");
-});
+router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
+router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
+  res.redirect('http://localhost:3000')
+})
 
 module.exports = router;
